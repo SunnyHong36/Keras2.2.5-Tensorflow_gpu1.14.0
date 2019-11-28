@@ -25,10 +25,15 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu==1.14.0
 　　网上的教程写的真的是乱七八糟，据我看完了20几篇加上自己的实践总结出来的这个是最全的，能把好多没讲明白的问题都涉及到。  
 　　首先我们可以查看TF的官网 https://www.tensorflow.org/ ， 这个国内网络环境可以打开,真不行可以百度搜索tensorflow,有一个是 https://tensorflow.google.cn/ , 还有它的中文社区，都可以。官网中有个地方讲的就有点自相矛盾，在安装的这一页的左边，先上图：　　
 <p align="center">
-<img src="https://upload-images.jianshu.io/upload_images/20306957-3b8e22206a210a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width = 30% height = 30% />
+<img src="https://upload-images.jianshu.io/upload_images/20306957-3b8e22206a210a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width = 20% height = 20% /> 
  <p align="center">
   <em>官网安装页左边</em>
   </p>  
 </p>
 
-<br>找到**Build from source**
+<br>找到**Build from source**然后选择**Windows**：<br><p align="center">
+<img src="https://upload-images.jianshu.io/upload_images/20306957-e8ae6f6ddd82bc79.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /> 
+ <p align="center">
+  <em>Build from source</em>
+  </p>  
+</p> <br>进去之后拉到页面最下方查看官方编译过的GPU版本的TF所需要的支持
