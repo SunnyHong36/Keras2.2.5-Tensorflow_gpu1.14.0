@@ -24,7 +24,7 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu==1.14.0
 
 ## 3.准备GPU驱动（显卡驱动）、CUDA和cuDNN
 　　网上的教程写的真的是乱七八糟，据我看完了20几篇教程加上自己的实践总结出来的这个可以说是目前最全的，把CUDA，cuDNN,显卡驱动这些问题都讲了一下。通过查看这些资料我们知道了要安装GPU版本的TF需要**具备的条件**是：
- <br>1.**硬件：**一块NVIDIA®的GPU卡，也就是俗称的N卡，这块卡的CUDA®计算能力要不低于3.5，一般的N卡笔记本电脑都是可以的，要是不知道的话，可以根据自己显卡型号在这个网站 https://developer.nvidia.com/cuda-gpus 上查一下，打开这个网站应该是需要网速和耐心等待的(查看自己电脑显卡型号的方法：打开NVIDIA控制面板，点击左下角系统信息，“显示”里就是，如下图所示)。 <br><p align="center">
+ <br>1.**硬件**：一块NVIDIA®的GPU卡，也就是俗称的N卡，这块卡的CUDA®计算能力要不低于3.5，一般的N卡笔记本电脑都是可以的，要是不知道的话，可以根据自己显卡型号在这个网站 https://developer.nvidia.com/cuda-gpus 上查一下，打开这个网站应该是需要网速和耐心等待的(查看自己电脑显卡型号的方法：打开NVIDIA控制面板，点击左下角系统信息，“显示”里就是，如下图所示)。 <br><p align="center">
 <img src="https://upload-images.jianshu.io/upload_images/20306957-b9dc598452d590b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=60% /> 
  <p align="center">
   <em>查看显卡型号</em>
@@ -45,7 +45,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu==1.14.0
   <em>查看显卡算力</em>   
   </p>  
 </p>
-2.**软件：**显卡驱动、需要根据安装的TF版本选择相对应的CUDA和cuDNN，总共三个软件，显卡驱动不用多说，都能下载到，不会的可以自行百度。剩下的两个软件分别是在https://developer.nvidia.com/cuda-toolkit-archive 和https://developer.nvidia.com/rdp/cudnn-archive 这两个地方下载，至于选择下载哪个接下来说。
+
+<br>2.**软件**:显卡驱动、需要根据安装的TF版本选择相对应的CUDA和cuDNN，总共三个软件，显卡驱动不用多说，都能下载到，不会的可以自行百度。剩下的两个软件分别是在https://developer.nvidia.com/cuda-toolkit-archive 和https://developer.nvidia.com/rdp/cudnn-archive 这两个地方下载，至于选择下载哪个接下来说。
 　　我们可以查看TF的官网 https://www.tensorflow.org/ ， 这个国内网络环境可以打开,真不行可以百度搜索tensorflow,有一个是 https://tensorflow.google.cn/ , 还有它的中文社区，都可以。官网中有个地方讲的就有点自相矛盾，在安装的这一页的左边，先上图：　　
 <p align="center">
 <img src="https://upload-images.jianshu.io/upload_images/20306957-3b8e22206a210a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width = 25% height = 25% /> 
@@ -119,12 +120,14 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu==1.14.0
 
 <br>下载完毕后，**建议先升级显卡驱动**，不升级后面说怎么操作。开始安装CUDA，双击后按照默认的下一步，选择自定义安装，有三个选项“CUDA”，“Other components”和“Driver components”,其中“CUDA”选项是全选，这里有一项是关于安装Visual Studio的，可以不选，但是因为我电脑上已经装了Visual Studio,所以全选也没关系，当然如果电脑没装VS的话，选了也没事，后面会有个提醒，忽视就好了。你要是不放心的话就提前装一个Visual Studio,只需要2015版的就可。第二项这里点开加号后如果是“当前版本”比“新版本”高就不要选，反之就可以选上，第三项也是，第三项是因为CUDA这个软件自带了一个NVIDIA的显卡驱动，如果我们在装CUDA之前升级了显卡驱动，这个时候一般是当前版本比新版本要高的，而且升级了显卡驱动后也是可以看到自己的显卡目前能支持到CUDA的哪个版本，在NVIDIA控制面板-->系统信息-->组件-->3D设置-->NVCUDA里查看，我这个升完显卡驱动，已经支持到了10.2.95了，所以说我给我的TF使用10.0的CUDA我的显卡是完全可以胜任这个工作的。这个CUDA是显卡驱动用的CUDA，跟我们这里TF要用的CUDA没关系，我们电脑里可以安装很多不同版本的CUDA，但是得按照教程的方法设置，才能跟对应版本的TF结合使用。自定义选好要安装的东西之后继续下一步，它的默认安装位置在C盘，当然想改的话就要**记住你的安装位置**（这个我没试过装别的盘是否好用）。
 
+
 <br> <p align="center">
 <img src="https://upload-images.jianshu.io/upload_images/20306957-24aff5124b751489.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=100% /> 
  <p align="center">
   <em>CUDA安装过程--检查系统兼容性，一般没问题</em>
   </p>  
 </p>
+
 
 <br> <p align="center">
 <img src="https://upload-images.jianshu.io/upload_images/20306957-f76641a744a371bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=100% /> 
