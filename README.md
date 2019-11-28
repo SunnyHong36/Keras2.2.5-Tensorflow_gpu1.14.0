@@ -22,7 +22,28 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu==1.14.0
 　　使用pip安装不使用conda install, 因为conda install会给你安装别的包。我后面尝试pip装好了tensorflow-gpu后用的conda install keras，就又给我装tensorflow-gpu，查看conda list的时候两个都有，一个是用pypi来build，一个是什么pyxx(忘了具体)build的。
 
 ## 3.准备GPU驱动（显卡驱动）、CUDA和cuDNN
-　　网上的教程写的真的是乱七八糟，据我看完了20几篇加上自己的实践总结出来的这个是最全的，能把好多没讲明白的问题都涉及到。  
+　　网上的教程写的真的是乱七八糟，据我看完了20几篇加上自己的实践总结出来的这个是最全的，能把好多没讲明白的问题都涉及到。通过查看这些资料我们知道了要安装GPU版本的TF需要具备的条件是：1.一块NVIDIA®的GPU卡，也就是俗称的N卡，这块卡的CUDA®计算能力要不低于3.5，一般的N卡笔记本电脑都是可以的，要是不知道的话，可以根据自己显卡型号在这个网站 https://developer.nvidia.com/cuda-gpus 上查一下，打开这个网站应该是需要网速和耐心等待的(查看自己电脑显卡型号的方法：打开NVIDIA控制面板，点击左下角系统信息，“显示”里就是，如下图所示)。 <br><p align="center">
+<img src="https://upload-images.jianshu.io/upload_images/20306957-b9dc598452d590b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=60% /> 
+ <p align="center">
+  <em>查看显卡型号</em>
+  </p>  
+</p>
+查看完了之后根据英伟达官网上的指示选择自己显卡类型去查看算力值:
+
+<br><p align="center">
+<img src="https://upload-images.jianshu.io/upload_images/20306957-93a557f4f3bdaa23.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=80% /> 
+ <p align="center">
+  <em>选择显卡类型</em>  
+  </p>  
+</p>
+
+<br><p align="center">
+<img src="https://upload-images.jianshu.io/upload_images/20306957-1cd1f4da733e2d6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=80% /> 
+ <p align="center">
+  <em>查看显卡算力</em>   
+  </p>  
+</p>
+
 　　首先我们可以查看TF的官网 https://www.tensorflow.org/ ， 这个国内网络环境可以打开,真不行可以百度搜索tensorflow,有一个是 https://tensorflow.google.cn/ , 还有它的中文社区，都可以。官网中有个地方讲的就有点自相矛盾，在安装的这一页的左边，先上图：　　
 <p align="center">
 <img src="https://upload-images.jianshu.io/upload_images/20306957-3b8e22206a210a9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width = 25% height = 25% /> 
@@ -30,10 +51,17 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorflow-gpu==1.14.0
   <em>官网安装页左边</em>
   </p>  
 </p>
-
-<br>找到**Build from source**然后选择**Windows**：<br><p align="center">
+<br>找到**Build from source**,然后选择 **Windows**：
+<br><p align="center">
 <img src="https://upload-images.jianshu.io/upload_images/20306957-e8ae6f6ddd82bc79.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" /> 
  <p align="center">
   <em>Build from source</em>
   </p>  
-</p> <br>进去之后拉到页面最下方查看官方编译过的GPU版本的TF所需要的支持
+</p> 
+<br>进去之后拉到页面最下方查看官方编译过的GPU版本的TF所需要的支持 
+<br> <p align="center">
+<img src="https://upload-images.jianshu.io/upload_images/20306957-b3c419f4dbd3ad61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=60% /> 
+ <p align="center">
+  <em>GPU版TF对应的CUDA和cuDNN版本</em>
+  </p>  
+</p>
