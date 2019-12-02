@@ -237,8 +237,15 @@ python
 <br>删除完CUDA的这些项后，查看CUDA安装位置，应该是有三个文件夹还在，因为这三个文件夹是我们从cuDNN里复制粘贴过来的，所以手动删除；最好是再清理一下注册表，不会自己清注册表的话就用 [火绒](https://www.huorong.cn/) 的安全工具清理,要是你装了360，腾讯电脑管家，金山什么的，就不多说啥了，卸载你的这些软件，然后装个火绒吧，不过看目前火绒的趋势有向360靠拢的倾向，如果它不行了，我就会删除这部分推荐的。然后再查看一下环境变量，有可能跟你装错的这个版本有关的环境变量还在，手动删除就可。这样就完成了删除，然后重新安装需要的版本。
 
 # Keras安装
-　　安装指定的2.2.5版本的keras,还是使用pip来安装：
- <br>命令是
+　　查看Keras[官方文档库](https://keras-zh.readthedocs.io/),可知2.2.5是最后一个支持TF1版本的，所以安装指定的2.2.5版本的keras,还是使用pip来安装：
+<br> <p align="center">
+<img src="https://upload-images.jianshu.io/upload_images/20306957-3e88f3b6bf033586.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width=100% /> 
+ <p align="center">
+  <em>Keras官方文档库</em>
+  </p>  
+</p>
+  
+ <br>命令是：
 ```
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple keras==2.2.5
 #pip install --ignored-installed --upgrade pkg  
